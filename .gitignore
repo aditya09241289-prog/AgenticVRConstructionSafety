@@ -1,0 +1,42 @@
+# Unity generated folders
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+[Uu]ser[Ss]ettings/
+
+# Unity / IDE
+.vs/
+.idea/
+.vscode/
+*.csproj
+*.sln
+*.user
+*.userprefs
+
+# Python
+backend/venv/
+backend/__pycache__/
+backend/**/__pycache__/
+*.pyc
+
+# Runtime/generated data
+backend/data/
+backend/logs/
+backend/metrics_output/
+data/
+
+# Backend builds
+backend/dist/
+
+# Archives / generated packages
+*.zip
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Secrets
+.env

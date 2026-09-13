@@ -1,0 +1,5 @@
+fastapi
+uvicorn[standard]
+pydantic
+python-dotenv
+google-genaiGet-Item ".\mitacs_agentic_vr_safety_MITACS.zip" | Select-Object Name, Length
