@@ -11,39 +11,6 @@ The project combines **Unity-based VR training**, **agentic decision-making**, *
 
 Traditional safety-training systems often present the same scenarios to every learner. This project explores an adaptive alternative in which an AI agent observes learner interactions, evaluates performance, and selects subsequent training actions based on the learner's behaviour.
 
-The system is designed around the following loop:
-
-```text
-Learner
-   ↓
-VR Construction Environment
-   ↓
-Hazard Interaction
-   ↓
-Learner Telemetry
-   ↓
-Agentic Decision Layer
-   ↓
-Next Scenario / Difficulty / Instruction
-   ↓
-Adaptive Training
-````
-
-A multimodal fall-detection service is also integrated into the training environment:
-
-```text
-Wearable Signals ───────┐
-                        │
-Environmental Signals ──┼──→ Multimodal Fall Detection
-                        │              ↓
-Vision / Optical Flow ──┘         Fall Probability
-                                       ↓
-                                  Agent Response
-```
-
----
-
-## Key Features
 
 ### Adaptive AI Training
 
@@ -104,60 +71,6 @@ A configurable threshold is then used to determine whether a fall has been detec
 
 The standalone application includes a backend launcher so the local safety-training API can be started automatically when the application runs.
 
----
-
-## System Architecture
-
-```text
-                         ┌──────────────────────┐
-                         │      Unity VR        │
-                         │ Construction World   │
-                         └──────────┬───────────┘
-                                    │
-                                    │ learner events
-                                    ▼
-                         ┌──────────────────────┐
-                         │   Agent API Client   │
-                         └──────────┬───────────┘
-                                    │
-                                    ▼
-                    ┌────────────────────────────────┐
-                    │       Agentic Backend          │
-                    │                                │
-                    │  Session Management            │
-                    │  Learner Model                 │
-                    │  Policy / Planner              │
-                    │  LLM Planner                   │
-                    └──────────────┬─────────────────┘
-                                   │
-                       next training action
-                                   │
-                                   ▼
-                    ┌───────────────────────────────┐
-                    │ Adaptive Hazard / Instruction  │
-                    └───────────────────────────────┘
-
-
-                Multimodal Safety Analysis Pipeline
-
-       Wearable ───────────────┐
-                               │
-       Environment ────────────┼──→ Fall Detection
-                               │
-       Vision / Optical Flow ──┘
-                                      │
-                                      ▼
-                              Decision Fusion
-                                      │
-                                      ▼
-                               Fall Detection
-                                      │
-                                      ▼
-                              Agentic Response
-```
-
----
-
 ## Technology Stack
 
 ### Frontend / Simulation
@@ -190,48 +103,6 @@ The standalone application includes a backend launcher so the local safety-train
 * PyInstaller
 * PowerShell
 
----
-
-## Project Structure
-
-```text
-mitacs_agentic_vr_safety/
-│
-├── AgenticVRConstructionSafety/
-│   ├── Assets/
-│   │   ├── Scripts/
-│   │   └── scenes/
-│   │
-│   ├── Packages/
-│   ├── ProjectSettings/
-│   └── README.md
-│
-├── backend/
-│   ├── app/
-│   │   ├── fall_detection_service.py
-│   │   ├── learner_model.py
-│   │   ├── llm_planner.py
-│   │   ├── main.py
-│   │   ├── models.py
-│   │   ├── policy.py
-│   │   ├── session_logger.py
-│   │   └── session_store.py
-│   │
-│   ├── dashboard.py
-│   ├── metrics.py
-│   ├── requirements.txt
-│   └── run_backend.py
-│
-├── scripts/
-│   ├── run_backend.bat
-│   └── run_backend.sh
-│
-└── study/
-    ├── metrics.md
-    └── pilot_protocol.md
-```
-
----
 
 ## Safety Scenarios
 
@@ -387,6 +258,17 @@ Potential future extensions include:
 * Real-world safety-training validation
 
 ---
+
+## Result
+<img width="1917" height="1198" alt="Screenshot 2026-09-14 001632" src="https://github.com/user-attachments/assets/75a91913-8da0-4b4c-a826-a6d675a23d5b" />
+<img width="1917" height="1198" alt="Screenshot 2026-09-14 001638" src="https://github.com/user-attachments/assets/3faacc22-3989-4fdd-8982-ee1667368299" />
+<img width="1887" height="971" alt="Screenshot 2026-09-14 001717" src="https://github.com/user-attachments/assets/e961d536-bb8d-4fb7-9adf-1f6bda28c39d" />
+<img width="1890" height="973" alt="Screenshot 2026-09-14 001705" src="https://github.com/user-attachments/assets/570bc3af-0810-4178-8706-9ca5fff8ee21" />
+
+
+
+
+
 
 ## Disclaimer
 
