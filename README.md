@@ -1,8 +1,4 @@
-Yes bro 😭 **copy and paste the whole thing below into the top-level `README.md` in VS Code**.
 
-I cleaned out the extra empty code blocks from what you pasted so the Markdown will render properly on GitHub.
-
-````markdown
 # Agentic AI for VR Construction Safety
 
 An agentic artificial intelligence system for adaptive construction-safety training in an immersive virtual environment.
